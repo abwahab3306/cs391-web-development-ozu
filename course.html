@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="course-style.css">
+    <title>COURSES</title>
+
+
+    <script>
+        function saveCourse() {
+            console.log("adads")
+            let course = {
+                courseName: document.getElementById("coursename").value,
+                teacher: document.getElementById("teacher").value,
+                courseCode: document.getElementById("coursecode").value,
+                weekday: document.getElementById("weekday").value,
+            }
+            localStorage.setItem("course", JSON.stringify(course));
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="parent">
+        <div class="holder">
+            <h2>Please enter your course details:</h2>
+
+            <div class="form-input">
+                <input id="coursename" name="coursename" placeholder="Math103">
+            </div>
+            <div class="form-input">
+                <input id="teacher" name="teacher" placeholder="Esma Meral">
+            </div>
+            <div class="form-input">
+                <input id="coursecode" name="coursecode" placeholder="CS391">
+            </div>
+            <div class="form-input">
+                <input id="weekday" name="weekday" placeholder="Friday">
+            </div>
+            <input type="submit" name="submit" value="Register" id="btn" onClick="saveCourse()">
+        </div>
+    </div>
+    <div class="welcome">
+        <p class="intro">List of available courses</p>
+    </div>
+
+
+</body>
+
+</html>
