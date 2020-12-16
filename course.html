@@ -5,20 +5,6 @@
     <link rel="stylesheet" type="text/css" href="course-style.css">
     <title>COURSES</title>
 
-
-    <script>
-        function saveCourse() {
-            console.log("adads")
-            let course = {
-                courseName: document.getElementById("coursename").value,
-                teacher: document.getElementById("teacher").value,
-                courseCode: document.getElementById("coursecode").value,
-                weekday: document.getElementById("weekday").value,
-            }
-            localStorage.setItem("course", JSON.stringify(course));
-        }
-
-    </script>
 </head>
 
 <body>
@@ -44,9 +30,53 @@
     </div>
     <div class="welcome">
         <p class="intro">List of available courses</p>
+        <table class="table table-checkout" id="table">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Course Code</th>
+                    <th>Teacher</th>
+                    <th>Weekday</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
 
+    <script>
+        function saveCourse() {
+            if (document.getElementById('coursename').value) {
+                let course = {
+                    courseName: document.getElementById("coursename").value,
+                    teacher: document.getElementById("teacher").value,
+                    courseCode: document.getElementById("coursecode").value,
+                    weekday: document.getElementById("weekday").value,
+                }
+                let courses = localStorage.getItem("courses") ? JSON.parse(localStorage.getItem("courses")) : [];
+                courses.push(course);
+                localStorage.setItem("courses", JSON.stringify(courses));
 
+                window.location.reload();
+            }
+
+        }
+
+        function displayCourses() {
+            let courses = localStorage.getItem("courses") ? JSON.parse(localStorage.getItem("courses")) : [];
+            console.log(courses);
+
+            var rows = "";
+            courses.map((row) => {
+                var row = '<tr><td>' + row.courseName + '</td><td>' + row.courseCode + '</td><td>' + row.teacher + '</td><td>' + row.weekday + '</td></tr>';
+                rows = rows + row;
+            })
+            var tbody = document.querySelector('#table tbody');
+            tbody.innerHTML = rows;
+        }
+        displayCourses();
+
+    </script>
 </body>
 
 </html>
