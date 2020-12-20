@@ -55,9 +55,8 @@ text-align: center;
  
     margin-top: 100px; padding: 1em;
     height: 100px;
-  
+    position: relative !important;
     margin-bottom: auto;
-position: absolute;;
    
   }
   /*  for article part written */
@@ -117,4 +116,9 @@ position: absolute;;
     left:25%;
    
   }
-  
+  #footer{
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+
+  }

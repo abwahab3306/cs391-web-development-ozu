@@ -3,14 +3,18 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="course-style.css">
+    <link rel="stylesheet" type="text/css" href="./assests/css/style.css">
     <title>COURSES</title>
 
 </head>
 
 <body>
+    <div id="header">
 
+    </div>
     <div class="parent">
         <div class="holder">
+            <h1>Enrolling courses For Students</h1>
             <h2>Please enter your course details:</h2>
 
             <div class="form-input">
@@ -29,7 +33,7 @@
         </div>
     </div>
     <div class="welcome">
-        <p class="intro">List of available courses</p>
+        <p class="intro">List of courses</p>
         <table class="table table-checkout" id="table">
             <thead>
                 <tr>
@@ -42,8 +46,12 @@
             <tbody>
             </tbody>
         </table>
+    
+        
     </div>
+    <div id="footer">
 
+    </div>
     <script>
         function saveCourse() {
             if (document.getElementById('coursename').value) {
@@ -53,9 +61,9 @@
                     courseCode: document.getElementById("coursecode").value,
                     weekday: document.getElementById("weekday").value,
                 }
-                let courses = localStorage.getItem("courses") ? JSON.parse(localStorage.getItem("courses")) : [];
+                let courses = localStorage.getItem("registercourses") ? JSON.parse(localStorage.getItem("registercourses")) : [];
                 courses.push(course);
-                localStorage.setItem("courses", JSON.stringify(courses));
+                localStorage.setItem("registercourses", JSON.stringify(courses));
 
                 window.location.reload();
             }
@@ -74,9 +82,14 @@
             var tbody = document.querySelector('#table tbody');
             tbody.innerHTML = rows;
         }
-        displayCourses();
+        window.addEventListener('load', ()=>{
+            displayCourses();
+        })
+
+        
 
     </script>
+        <script src="./assests/js/custom.js" ></script>
 </body>
 
 </html>

@@ -4,45 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assests/css/style.css">
 </head>
 
 
 <body>
-    <ul class="ana">
-        <li><a href="home.html" class="active">Home</a></li>
-        <li><a href="student.html">Page for Student</a></li>
-        <li><a href="teacher.html">Page for Teacher</a></li>
-        <li><a href="#about">Contact Us</a></li>
-      </ul>
+  <div id="header">
 
-      <nav class="student_nav" style="background-color: rgb(32, 94, 94);height: 100px;
-      ">
-        <p> <b> .. Web Sayfası İçeriği</b> 
-      
-          <article class ="infhover">
-                      <section style="text-decoration: dotted;font-style: italic;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">
-                 
-                           <li class="list">   <b> Enrolling courses For Students</b>   </li>
-                       <br>
-                      </section>
-                </article>
-          
-         
-      </nav>
+  </div>
+  <div>
+    <h1> <b> Enrolled courses</b> </h1>
+  </div>
 
 
+  <div class="welcome">
+    <p class="intro">List of courses</p>
+    <table class="table table-checkout" id="table">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Course Code</th>
+                <th>Teacher</th>
+                <th>Weekday</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 
+    
+</div>
 
 
 
   
-      <footer class="containf">
+     <div id="footer">
 
-        <br>
-        <br>
-       <b> © 2021 Özyeğin Üniversitesi</b>
-        <br><br>
-          </footer>
+     </div>
+     <script>
+            function displayCourses() {
+            let courses = localStorage.getItem("courses") ? JSON.parse(localStorage.getItem("registercourses")) : [];
+            console.log(courses);
+
+            var rows = "";
+            courses.map((row) => {
+                var row = '<tr><td>' + row.courseName + '</td><td>' + row.courseCode + '</td><td>' + row.teacher + '</td><td>' + row.weekday + '</td></tr>';
+                rows = rows + row;
+            })
+            var tbody = document.querySelector('#table tbody');
+            tbody.innerHTML = rows;
+        }
+        window.addEventListener('load', ()=>{
+            displayCourses();
+        })
+     </script>
+     <script src="./assests/js/custom.js" ></script>
+
 </body>
 </html>

@@ -1,15 +1,92 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Home - Teacher</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <script src="../assests/js/custom.js"  async defer></script>
-    </body>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="course-style.css">
+    <link rel="stylesheet" type="text/css" href="../assests/css/style.css">
+    <title>COURSES</title>
+
+</head>
+
+<body>
+	<h1> Welcome to teacher page</h1>
+    <div class="parent">
+        <div class="holder">
+            <h2>Please enter your course details:</h2>
+
+            <div class="form-input">
+                <input id="coursename" name="coursename" placeholder="Math103">
+            </div>
+            <div class="form-input">
+                <input id="teacher" name="teacher" placeholder="Esma Meral">
+            </div>
+            <div class="form-input">
+                <input id="coursecode" name="coursecode" placeholder="CS391">
+            </div>
+            <div class="form-input">
+                <input id="weekday" name="weekday" placeholder="Friday">
+            </div>
+            <input type="submit" name="submit" value="Register" id="btn" onClick="saveCourse()">
+        </div>
+    </div>
+    <div class="welcome">
+        <p class="intro">List of courses</p>
+        <table class="table table-checkout" id="table">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Course Code</th>
+                    <th>Teacher</th>
+                    <th>Weekday</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    
+        
+    </div>
+    <div id="footer">
+
+    </div>
+    <script>
+        function saveCourse() {
+            if (document.getElementById('coursename').value) {
+                let course = {
+                    courseName: document.getElementById("coursename").value,
+                    teacher: document.getElementById("teacher").value,
+                    courseCode: document.getElementById("coursecode").value,
+                    weekday: document.getElementById("weekday").value,
+                }
+                let courses = localStorage.getItem("courses") ? JSON.parse(localStorage.getItem("courses")) : [];
+                courses.push(course);
+                localStorage.setItem("courses", JSON.stringify(courses));
+
+                window.location.reload();
+            }
+
+        }
+
+        function displayCourses() {
+            let courses = localStorage.getItem("courses") ? JSON.parse(localStorage.getItem("courses")) : [];
+            console.log(courses);
+
+            var rows = "";
+            courses.map((row) => {
+                var row = '<tr><td>' + row.courseName + '</td><td>' + row.courseCode + '</td><td>' + row.teacher + '</td><td>' + row.weekday + '</td></tr>';
+                rows = rows + row;
+            })
+            var tbody = document.querySelector('#table tbody');
+            tbody.innerHTML = rows;
+        }
+        window.addEventListener('load', ()=>{
+            displayCourses();
+        })
+
+        
+
+    </script>
+        <script src="../assests/js/custom.js" ></script>
+</body>
+
 </html>

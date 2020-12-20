@@ -44,8 +44,10 @@ const validateUser = (email, password) => {
 			if (user) {
 				console.log("knf");
 				if (user.password === password) {
-					sessionStorage.setItem("login", true);
-					location.pathname = "/home.html";
+                    sessionStorage.setItem("login", true);
+                    if(dbPath===studentDB)
+                    location.pathname = "/home.html";
+                    else location.pathname = "teacher/home.html";
 				}
 			}
 		});
