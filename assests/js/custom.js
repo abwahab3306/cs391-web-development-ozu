@@ -19,5 +19,11 @@ let loggedIN = sessionStorage.getItem("login");
 	<li><a href="home.html">Home</a></li>
 	<li><a href="course.html">Register courses</a></li>
 	<li><a href="student.html">Courses</a></li>
-	<li><a href="home.html/#about">Contact Us</a></li>
+	<li><a href="home.html#about">Contact Us</a></li>
+	<button onclick="logout()">Logout</button>
   </ul>`
+
+  const logout =()=>{
+	  sessionStorage.removeItem("login")
+	  location.reload()
+  }
