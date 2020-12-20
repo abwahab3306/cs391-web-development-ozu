@@ -1,0 +1,15 @@
+
+   [
+    {
+        "name": "Ashwin",
+        "age": "20", 
+        "email":"ashwin30@ozu.edu.tr",
+        "password": ""
+    },
+    {
+        "name": "Abhinandan",
+        "age": "20",
+        "email":"ashwin@ozu.edu.tr",
+        "password": ""
+    }
+]

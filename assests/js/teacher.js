@@ -1,14 +1,13 @@
-
 let loggedIN = sessionStorage.getItem("login");
 // let users = []
 
 ///////// LOGIN PAGE ///////////
 if (
-	window.location.pathname === "/" ||
-	window.location.pathname === "/index.html"
+	window.location.pathname === "teacher/" ||
+	window.location.pathname === "teacher/index.html"
 ) {
 	if (loggedIN) {
-		location.pathname = "/home.html";
+		location.pathname = "teacher/home.html";
 	} else {
 		setInterval(() => {
 			document.getElementById("loader").style.display = "none";
