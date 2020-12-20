@@ -6,30 +6,30 @@
 	</head>
 
 <body>
+<div id="loader">
 
-	<div class="parent">
-
-
+</div>
+	<div class="parent" id="loginPage">
 			<div class="holder"> 
-				<form method="POST" action="">
 					<h2>Please enter your username and password</h2>
 
 					<div class="form-input"> 
-						<input name="username" type="username" placeholder="abc@ozu.edu.tr">
+						<input id="useremail" name="username" type="email" placeholder="abc@ozu.edu.tr" required>
 					</div>
 					<div class="form-input"> 
-						<input name="password" type="Password" placeholder="Password">
+						<input id="userpassword" name="password" type="password" placeholder="Password" required>
 					</div>
-					<input type="submit" name="submit" value="LOGIN" id="btn">
-				
-				</form>
-				
+					<div>
+						<button id="login" disabled>
+							Login
+						</button>
+					</div>
 			</div>
 	</div>
 	<div class ="welcome"> 
 		<p class="intro">welcome to the course registration system</p>
 	</div>
 		
-
+	<script src="./assests/js/custom.js" ></script>
 	</body>
 	</html>
