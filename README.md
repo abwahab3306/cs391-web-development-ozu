@@ -9,3 +9,19 @@ Teachers can add courses
 
 
 The other necessary constraints like max name length and email syntax, etc will also be implemented.
+
+## Important: please use Live Server to run this project.
+
+### Find Logins credentials below:
+
+#### Teachers:
+
+"email":"ashwin30@ozu.edu.tr",
+"password": "123456"
+
+#### Students:
+
+"email":"ashwin30@ozu.edu.tr",
+"password": "123456"
+
+## To Add new users just go to db folder and you may add as many users using the same format. 
