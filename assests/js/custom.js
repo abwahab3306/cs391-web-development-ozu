@@ -8,7 +8,10 @@ let loggedIN = sessionStorage.getItem("login");
 		window.location.pathname = "/"
 	}
 
-
+	const logout =()=>{
+		sessionStorage.removeItem("login")
+		location.reload()
+	}
 	document.getElementById('footer').innerHTML =`	<footer class="containf">
 	<br /><br />
 	<b> © 2021 Özyeğin Üniversitesi</b>
@@ -23,7 +26,4 @@ let loggedIN = sessionStorage.getItem("login");
 	<button onclick="logout()">Logout</button>
   </ul>`
 
-  const logout =()=>{
-	  sessionStorage.removeItem("login")
-	  location.reload()
-  }
+
