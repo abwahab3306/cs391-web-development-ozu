@@ -5,7 +5,7 @@ let loggedIN = sessionStorage.getItem("login");
 			document.getElementById("loader").style.display = "none";
 		}, 1000);
 	}else{
-		window.location.pathname = "/"
+		window.location.pathname = "cs391-web-development-ozu/"
 	}
 
 	const logout =()=>{

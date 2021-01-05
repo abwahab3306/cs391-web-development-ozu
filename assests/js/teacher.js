@@ -3,7 +3,7 @@ let loggedIN = sessionStorage.getItem("login");
 
 ///////// LOGIN PAGE ///////////
 	if (loggedIN) {
-		location.pathname = "teacher/home.html";
+		location.pathname = "cs391-web-development-ozu/teacher/home.html";
 	} else {
 		setInterval(() => {
 			document.getElementById("loader").style.display = "none";

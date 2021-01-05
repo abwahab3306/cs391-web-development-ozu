@@ -46,8 +46,8 @@ const validateUser = (email, password) => {
 				if (user.password === password) {
                     sessionStorage.setItem("login", true);
                     if(dbPath===studentDB)
-                    location.pathname = "/home.html";
-                    else location.pathname = "teacher/home.html";
+                    location.pathname = "cs391-web-development-ozu/home.html";
+                    else location.pathname = "cs391-web-development-ozu/teacher/home.html";
 				}
 			}
 		});
