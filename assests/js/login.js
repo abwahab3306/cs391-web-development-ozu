@@ -55,7 +55,9 @@ const validateUser = (email, password) => {
 
 if (
 	window.location.pathname === "cs391-web-development-ozu/" ||
-	window.location.pathname === "cs391-web-development-ozu/index.html"
+	window.location.pathname === "cs391-web-development-ozu/index.html" || 
+	window.location.pathname === "/index.html" ||
+	window.location.pathname === "cs391-web-development-ozu/"
 ){
     dbPath = studentDB
 }else dbPath = teacherDB
