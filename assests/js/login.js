@@ -1,7 +1,7 @@
 let emailObject = document.getElementById("useremail");
 let passwordObject = document.getElementById("userpassword");
 let loginButton = document.getElementById("login");
-let studentDB = `../assests/db/students.json`;
+let studentDB = `/cs391-web-development-ozu/assests/db/students.json`;
 let teacherDB = `../assests/db/teachers.json`;
 let dbPath = '';
 
@@ -22,6 +22,16 @@ const getUsers = async (path) => {
 };
 
 const validateUser = (email, password) => {
+	console.log(window.location.pathname)
+	if (
+		window.location.pathname === "/cs391-web-development-ozu/" ||
+		window.location.pathname === "/cs391-web-development-ozu/index.html" || 
+		window.location.pathname === "/index.html" ||
+		window.location.pathname === "/cs391-web-development-ozu/"
+	){
+		dbPath = studentDB
+	}else dbPath = teacherDB
+	console.log(dbPath);
 	getUsers(dbPath)
 		.then((users) => {
 			if (users.length > 0) {
@@ -46,21 +56,14 @@ const validateUser = (email, password) => {
 				if (user.password === password) {
                     sessionStorage.setItem("login", true);
                     if(dbPath===studentDB)
-                    location.pathname = "cs391-web-development-ozu/home.html";
-                    else location.pathname = "cs391-web-development-ozu/teacher/home.html";
+                    location.pathname = "/cs391-web-development-ozu/home.html";
+                    else location.pathname = "/cs391-web-development-ozu/teacher/home.html";
 				}
 			}
 		});
 };
 
-if (
-	window.location.pathname === "cs391-web-development-ozu/" ||
-	window.location.pathname === "cs391-web-development-ozu/index.html" || 
-	window.location.pathname === "/index.html" ||
-	window.location.pathname === "cs391-web-development-ozu/"
-){
-    dbPath = studentDB
-}else dbPath = teacherDB
+
 
 window.addEventListener("load", () => {
 	setInterval(() => {

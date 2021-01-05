@@ -1,15 +1,15 @@
 
    [
-        {
-            "name": "Ashwin",
-            "age": "20", 
-            "email":"ashwin30@ozu.edu.tr",
-            "password": "123456"
-        },
-        {
-            "name": "Abhinandan",
-            "age": "20",
-            "email":"ashwin@ozu.edu.tr",
-            "password": "123456"
-        }
-    ]
+    {
+        "name": "Ashwin",
+        "age": "20", 
+        "email":"ashwin30@ozu.edu.tr",
+        "password": "123456"
+    },
+    {
+        "name": "Abhinandan",
+        "age": "20",
+        "email":"ashwin@ozu.edu.tr",
+        "password": ""
+    }
+]
